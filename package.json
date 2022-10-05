@@ -1,0 +1,27 @@
+{
+  "name": "simple-git-hook",
+  "version": "1.0.0",
+  "description": "simple-git-hook",
+  "author": "lifetgit",
+  "homepage": "https://github.com/lifegit/simple-git-hook#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifegit/simple-git-hook.git"
+  },
+  "keywords": [
+    "gitHooks",
+    "git-hooks",
+    "commit-msg",
+    "verifyCommit"
+  ],
+  "bugs": {
+    "url": "https://github.com/lifegit/simple-git-hook/issues"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.1",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "commit-msg": "node scripts/verifyCommit.js"
+  }
+}
