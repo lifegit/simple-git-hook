@@ -17,11 +17,24 @@
   "bugs": {
     "url": "https://github.com/lifegit/simple-git-hook/issues"
   },
+  "scripts": {
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx"
+  },
   "devDependencies": {
     "chalk": "^4.1.1",
+    "eslint": "^8.25.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
+    "pre-commit": "lint-staged",
     "commit-msg": "node scripts/verifyCommit.js"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "npm run lint-staged:js"
+    ]
   }
 }
